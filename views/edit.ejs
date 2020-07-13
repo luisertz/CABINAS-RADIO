@@ -1,0 +1,116 @@
+<% include partials/_header %>
+
+<div class="container">
+  <div class="row">
+    <!--FORM-->
+    <div class="col-md-5 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <form action="/edit/<%= task._id %>" method="post"> 
+            <div class="form-group">
+              <div>
+                  <label>Cabina:</label>
+                                   <select name="cabina" class="form-control" required>
+                    <option><%=task.cabina%></option>
+                    <option>Alejandro Aura</option>
+                    <option>Coyote Lagañas</option>
+                    <option>Victor Hugo</option>
+                    
+                </select>
+              </div>
+            <P></P>
+              <p>
+                <label>Programa:</label>
+                <label>    </label>
+                <select name="prog" class="form-control" required >
+                  <option><%=task.prog%></option>
+                  <option value="@ ton y son">@ ton y son</option>
+                  <option value="Ah que la canción">Ah que la canción</option>
+                  <option value="Algarabia Radio">Algarab&iacute;a Radio</option>
+                  <option value="Codigo Indie">C&oacute;digo Indie</option>
+                  <option value="Balalaika">Balalaika</option>
+                  <option value="Codigo Retro"> C&oacute;digo Retro</option>
+                  <option value="Código Noticias">Código Noticias</option>
+                  <option value="Codigo ReTropical"> C&oacute;digo ReTropical</option>
+                  <option value="Cosas de Ninos"> Cosas de Ni&ntilde;os</option>
+                  <option value="Cultura Urbana"> Cultura Urbana</option> 
+                  <option value="Entre Calles, Monumentos y Recintos"> Entre Calles, Monumentos y Recintos</option>
+                  <option value="Este Lado del Teatro"> Este Lado del Teatro</option>
+                  <option value="Kinoko Power"> Kinoko Power</option>
+                  <option value="Laberinto de Nietch">Laberinto de Nietch</option>
+                  <option value="La Tarima Acustica"> La Tarima Ac&uacute;stica</option>
+                  <option value="La Vida Secreta"> La Vida Secreta</option>
+                  <option value="Luces de la Ciudad"> Luces de la Ciudad</option>
+                  <option value="La charla sin fin"> La Charla sin F&iacute;n</option>
+                  <option value="La vitrina">La Vitrina</option>
+                  <option value="Nosotros... Los Otros"> Nosotros... Los Otros</option>
+                  <option value="Ombligo de Tierra"> Ombligo de Tierra</option>
+                  <option value="Oye Ciencia"> Oye Ciencia</option>
+                  <option value="Progresion"> Progresi&oacute;n</option>
+                  <option value="Radio Abierta"> Radio Abierta</option>
+                  <option value="La Mirada como Instinto"> La Mirada como Instinto</option>
+                  <option value="Salón Rojo">Salón Rojo</option>
+                  <option value="Sin Etiquetas">Sin Etiquetas</option>
+                  <option value="Territorios"> Territorios</option>
+                  <option value="Trasatlantico"> Trasatl&aacute;ntico</option>
+                  <option value="Yo es otro"> Yo es otro</option>
+                  <option value="Codigo Musica"> C&oacute;digo M&uacute;sica</option>
+                  <option value="Escenarios Que se Escuchan"> Escenarios Que se Escuchan</option>
+                  <option value="Especial">Especial</option>
+                  <option value="Bazar de Letras"> Bazar de Letras</option>
+                  <option value="Algarabia Niños">Algarabia Niños</option>
+              </select>
+            </p>
+              </div>
+              <div class="form-group">
+                </p>
+                <p>
+                <label>Fecha:</label>
+                <input type="date" class="form-control" name="fecha" value="<%=task.fecha%>"></input>
+              </p>
+  
+                </p>
+                <p>
+                  <td><div>
+                    <label>Entrada:</label>
+                    <input type="time" max="20:00" min='09:00' name='hora1' step="1800" class="form-control" value="<%=task.hora1%>"required>
+                  </div>
+                    
+                  </td>
+                </p>
+                <p>
+                  <td> <div>
+                    <label>Salida:</label>
+                    <input type="time" max="21:00" min='10:00' name='hora2' step="1800" class="form-control" value="<%=task.hora2%>" required>
+                  </div>
+                      
+                  </td>
+                      </p>
+
+                      <p>
+                          <label>Requerimientos Tecnicos:</label>
+                          <textarea type="text" class="form-control" name="reqtec" maxlength="250" style="height:150px" ><%=task.reqtec%></textarea>
+                        </p>
+
+                        <p>
+                            <label>Comentarios:</label>
+                            <textarea type="text" class="form-control" name="coments" maxlength="250" style="height:150px"><%=task.coments%></textarea>
+                          </p>
+
+
+  
+  
+              </div>
+            <button class="btn btn-primary" type="submit">
+              Actualizar 
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<% include partials/_footer%>

@@ -1,0 +1,86 @@
+<% include partials/_header %>
+
+<div container>
+    <div class="card">
+        <div class="card-body">
+          <form action="/busqueda/<%= tasks.fecha %>" method="GET">
+            <div class="form-group">
+
+                
+                    <label>Busqueda por Fecha:</label>
+                    <input type="date" class="form-control" name="fecha"></input>
+                
+                <!--Boton Busqueda-->
+                    <a href="/busqueda/<%= tasks.fecha %>" class="btn btn-danger" >
+                          Ir
+                          </a>
+                        </form>
+                      
+                    </div>
+                  </div>
+
+<!-- LIST -->
+<tr></tr>
+<div class="col-md-9">
+  <table class="table table-bordered table-hover" style="margin: 5px auto; text-align: center;">
+    <thead>
+      <tr>
+          <div class="card">
+            <div class="card-body">
+              
+              <form action="/busqueda/<%= tasks.fecha %>" method="GET">
+                <p></p>
+                          
+                        </div>
+                      </div>
+                    
+                    
+        </tr>
+      <tr>
+        <th>N°</th>
+        <th>Cabina</th>
+        <th>Programa</th>
+        <th>Fecha</th>
+        <th>Entrada</th>
+        <th>Salida</th>
+        <th>Requerimientos Tecnicos</th>
+        <th>Comentarios</th>
+        <th>Acciones</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i < tasks.length; i++) { %>
+        <tr>
+          <td><%= i + 1%></td>
+          <td><%= tasks[i].cabina %></td>
+          <td><%= tasks[i].prog %></td>
+          <td><strong><%= tasks[i].fecha %></strong></td>
+          <td><%= tasks[i].hora1 %></td>
+          <td><%= tasks[i].hora2 %></td>
+          <td><%= tasks[i].reqtec %></td>
+          <td><%= tasks[i].coments %></td>
+          <td>
+            <!--<a
+              class="<%= tasks[i].status ? 'btn btn-success' : 'btn btn-warning'%>"
+              href="/turn/<%= tasks[i]._id %>">Confirmar</a>
+            
+                <a href="/delete/<%= tasks[i]._id %>"
+              class="btn btn-danger">
+              Borrar?
+            </a>
+            -->
+            <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">
+              Modificar
+            </a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+</div>
+
+</div>
+
+</div>
