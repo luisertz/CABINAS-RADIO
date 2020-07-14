@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../model/task');
 const bodyParser = require('body-parser')
-const Swal = require('sweetalert2')
 const bodyParserJSON = bodyParser.json();
 const bodyParserURLEncoded = bodyParser.urlencoded({ extended: true });
 
